@@ -5,6 +5,36 @@ body {
     margin: 0px;
 }
 
+header {
+   background: linear-gradient(rgb(44, 42, 42), black);
+   background-color: rgb(44, 42, 42);
+   color: rgb(151, 226, 151);
+   padding: 20px; font-size: 16pt;
+}
+
+.xd:hover {
+   background: rgba(196, 196, 196, 0.199);
+}
+
+.xd:active {
+   font-size: 25px;
+   font-weight: bold;
+   color: white;
+}
+
+footer {
+   padding: 25px;
+   text-align: right;
+   font-style: italic;
+   padding: 25px;
+   text-align: right;
+   font-style: italic;
+   position: fixed;
+   bottom: 0px;
+   left: 0;
+   right: 0;
+}
+
 h1 {
    text-align: center;
 }
@@ -12,6 +42,38 @@ h1 {
 img {
    display: flex;
    margin: auto;
+   margin-top: 20px;
    height: 300px;
    width: 300px;
+}
+
+a {
+   color: bisque;
+   font-size: 15px;
+   font-style: italic;
+   text-decoration: none;
+}
+
+a:active {
+   color: aliceblue;
+}
+
+a:hover {
+   font-weight: bolder;
+   text-shadow: rgb(235, 227, 227) 0px 0px 10px ;
+}
+
+.log {
+   width: 500px;
+   height: 300px;
+}
+
+.p {
+   text-align: left;
+   padding-top: 10px;
+}
+
+.sh {
+   width: 350px;
+   height: 300px;
 }
