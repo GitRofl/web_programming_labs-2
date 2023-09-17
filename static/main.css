@@ -1,0 +1,36 @@
+body {
+   background-color: #444444;
+   color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+header {
+   background: linear-gradient(rgb(44, 42, 42), black);
+   background-color: rgb(44, 42, 42);
+   color: rgb(151, 226, 151);
+   padding: 20px; font-size: 16pt;
+}
+
+.xd:hover {
+   background: rgba(196, 196, 196, 0.199);
+}
+
+.xd:active {
+   font-size: 25px;
+   font-weight: bold;
+   color: white;
+}
+
+footer {
+   padding: 25px;
+   text-align: right;
+   font-style: italic;
+   padding: 25px;
+   text-align: right;
+   font-style: italic;
+   position: fixed;
+   bottom: 0px;
+   left: 0;
+   right: 0;
+}
