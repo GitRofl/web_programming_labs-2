@@ -9,7 +9,10 @@ def start():
 @app.route("/lab2/example")
 def example():
    name= 'Артём Басман'
-   return render_template('example.html', name=name)
+   lab_number= 'Лабораторная работа 2'
+   group= 'ФБИ-12' 
+   n_class= '3 курс'
+   return render_template('example.html', name=name, lab_number=lab_number, group=group, n_class=n_class  )
 
 @app.route("/menu")
 def menu():

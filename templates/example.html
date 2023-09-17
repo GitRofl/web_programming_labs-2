@@ -3,12 +3,12 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Basman Artem lab 2</title>
+   <title>Basman Artem {{ lab_number }}</title>
 </head>
 <body>
 
    <header class="xd">
-      НГТУ, ФБ, Лабораторная работа № 1
+      НГТУ, ФБ, {{ lab_number }}
    </header>
 
    <main>
@@ -16,7 +16,7 @@
    </main>
 
    <footer class="xd">
-      &copy; {{ name }}, ФБИ-12, 3 курс, 2023
+      &copy; {{ name }}, {{ group }}, {{ n_class }}, 2023
    </footer>
    
 </body>
