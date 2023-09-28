@@ -38,3 +38,19 @@ footer {
 main {
    margin-left: 15px;
 }
+
+a {
+   color: bisque;
+   font-size: 15px;
+   font-style: italic;
+   text-decoration: none;
+}
+
+a:active {
+   color: aliceblue;
+}
+
+a:hover {
+   font-weight: bolder;
+   text-shadow: rgb(235, 227, 227) 0px 0px 10px ;
+}

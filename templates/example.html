@@ -22,6 +22,16 @@
       11 × 28 = {{ 11 * 28 }} <br>
       8452 / 793 = {{ 8452 / 793 }} <br>
       45<sup>8</sup> = {{ 45**8 }} <br>
+      <ul>
+         {% for f in fruits %}
+         <li>{{ f.name }}: {{ f.price }} &#x20bd;</li>
+         {% endfor %}
+      </ul>
+      <ol>
+         {% for b in book %}
+         <li>{{ b.name }} - {{ b.name_b }} ({{ b.genre }})- {{ b.pages }}. </li><br>
+         {% endfor %}
+      </ol>
    </main>
 
    <footer class="xd">
