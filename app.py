@@ -6,7 +6,7 @@ app = Flask(__name__)
 def start():
     return redirect("/menu", code=302)
 
-@app.route("/lab2/example")
+@app.route("/lab2/exemple")
 def example():
    name= 'Артём Басман'
    lab_number= 'Лабораторная работа 2'
@@ -38,6 +38,10 @@ def example():
 def lab2():
    return render_template('lab2.html')
 
+@app.route("/lab2/scenery")
+def lab2_2():
+   return render_template('lab2_2.html')
+
 @app.route("/menu")
 def menu():
    return """
@@ -53,8 +57,11 @@ def menu():
          <header class="xd">
             НГТУ, ФБ, WEB-программирование, часть 2. Список лабораторных
          </header>
+            
+         <li><a href="/lab1">Первая лабораторная</a></li>
+         <li><a href="/lab2">Вторая лабораторная</a></li>
          
-         <a href="/lab1">Первая лабораторная</a>
+         
          
          <footer class="xd">
             &copy; Басман Артём, ФБИ-12, 3 курс, 2023
@@ -79,7 +86,7 @@ def lab1():
          <header class="xd">
             НГТУ, ФБ, Лабораторная работа № 1
          </header>
-
+         <a href="/menu">Меню</a>
          <h1>web-сервер на flask</h1>
          <div>
             Flask — фреймворк для создания веб-приложений на языке
@@ -88,7 +95,7 @@ def lab1():
             называемых микрофреймворков — минималистичных каркасов
             веб-приложений, сознательно предоставляющих лишь самые базовые возможности.
          </div>
-         <a href="/menu">Меню</a>
+         
          
          <h2>Реализованные роуты</h2>
          <ul>
