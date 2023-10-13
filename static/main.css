@@ -80,3 +80,9 @@ img {
    width: 900px;
 
 }
+
+.error {
+   color: rgb(182, 45, 45);
+   font-size: 13px;
+   font-weight: bolder;
+}
