@@ -11,7 +11,7 @@
 
    <div>Ваш возраст: {{ age }}</div>
 
-   <div>Ваш пол: {{ sex }}</div>
+   <div>Ваш пол: {{ 'Мужской' if sex == 'male' else 'Женский' }}</div>
 
    <div>
       <a href='/lab3/forml'>Заново</a>
