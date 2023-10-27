@@ -86,3 +86,24 @@ img {
    font-size: 13px;
    font-weight: bolder;
 }
+
+form {
+   margin: auto; 
+   text-align: center;
+   padding-top: 15px;
+   width: 900px;
+}
+
+.ot {
+   margin-top: 7px;
+}
+
+.er{
+   margin-bottom: 15px;
+}
+button {
+   margin-top: 17px;
+   width: 130px;
+   height: 30px;
+   background-color: aqua;
+}

@@ -1,0 +1,98 @@
+{%extends "base.html" %}
+
+{% block lab %}Лабораторная работа 3{% endblock %}
+
+{% block main %}
+
+   {%if user and age and type and place  and point and point2 and date%}
+      
+   <h1>Оформление прошло успешно</h1>
+   <h2>{{ user }}, вы оформили билет! Проверьте свои данные:</h2>
+
+   <div>ФИО: {{ user }} {{ name_1 }} {{ name_2 }}</div>
+
+   <div>Ваш возраст: {{ age }}</div>
+
+   <div>Ваше место: {{ place }}</div>
+
+   <div>Тип билета: {{ type }}</div>
+
+   <div>Пункт выезда: {{ point }}</div>
+
+   <div>Пункт назначения: {{ point2 }}</div>
+
+   <div>Дата поездки: {{ date }}</div>
+
+   <div>
+      <a href='/lab3/ticket'>назад</a>
+   </div>
+   {% else %}
+
+   <form>
+      <h1>Данные пассажира</h1>
+
+      <label>Ваше ФИО:</label>
+      <div class="ot">
+         <input type="text" placeholder="Имя" name="user" value="{{ user or '' }}">
+         <input type="text" placeholder="Фамилия" name="name_1">
+         <input type="text" placeholder="Отчество" name="name_2">
+      </div>
+      <div class="er"><span class="error"> {{ errors.user }}</span></div>
+
+      <label>Тип билета:</label>
+      <div class="ot">
+         <select name="type">
+            <option value="baby">Детский</option>
+            <option value="man">Взрослый</option>
+         </select> 
+      </div>
+
+      <label>Место:</label>
+      <div class="ot">
+         <select name="place">
+            <option value="down">нижняя полка</option>
+            <option value="up">верхняя полка</option>
+            <option value="down_1">верхняя боковая полка</option>
+            <option value="up_1">нижняя боковая полка</option>
+         </select> 
+      </div>
+
+      <div class="ot">
+         <label>
+            <input type="checkbox" name="baggage">Наличие багажа
+         </label>
+      </div>
+      
+
+      <label>Ваш возраст:</label>
+      <div class="ot">
+         <input max="120" min="18" type="number" name="age" placeholder="Введите ваш возраст">
+      </div>
+      <div class="er"><span class="error"> {{ errors.user }}</span></div>
+
+      <label>Пункт выезда:</label>
+      <div class="ot">
+         <input type="text" placeholder="Введите пункт выезда" name="point">
+      </div>
+      <div class="er"><span class="error"> {{ errors.point }}</span></div>
+
+      <label>Пункт назначения:</label>
+      <div class="ot">
+         <input type="text" placeholder="Введите пункт назначения" name="point2">
+      </div>
+      <div class="er"><span class="error"> {{ errors.point2 }}</span></div>
+
+      <label>Дата поездки:</label>
+      <div class="ot">
+         <input type="date" name="date">
+      </div>
+
+      <div class="ot">
+         <button type="submit">Оформить</button>
+      </div>
+
+   </form>
+
+
+   {% endif %}
+{% endblock %}

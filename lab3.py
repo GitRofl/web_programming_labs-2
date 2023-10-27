@@ -18,10 +18,28 @@ def forml():
    age = request.args.get('age')
    if age == '':
       errors['age'] = 'Заполните поле!'
-      
+  
+   type = request.args.get('type')
+   
+   place = request.args.get('place')
+   
+   baggage = request.args.get('baggage')
+   
+   point = request.args.get('point')
+   if point == '':
+      errors['point'] = 'Заполните поле!'
+   
+   point2 = request.args.get('point2')
+   if point2 == '':
+      errors['point2'] = 'Заполните поле!'
+   
+   date = request.args.get('date')
+ 
+   
    sex = request.args.get('sex')
+
       
-   return render_template('forml.html', user=user, age=age, sex=sex, errors=errors)
+   return render_template('forml.html', date=date, point=point, point2=point2, user=user, age=age, baggage=baggage, sex=sex, errors=errors, type=type, place=place)
 
 
 @lab3.route('/lab3/order')
@@ -50,3 +68,38 @@ def pay():
 @lab3.route('/lab3/success')
 def success():
    return render_template('success.html')
+
+@lab3.route('/lab3/ticket')
+def ticket():
+   errors = {}
+   place = request.args.get('place')
+   
+   type = request.args.get('type')
+   
+   name_1 = request.args.get('name_1')
+   if name_1 == '':
+      errors['name_1'] = 'Заполните поле!'
+      
+   name_2 = request.args.get('name_2')
+   if name_2 == '':
+      errors['name_2'] = 'Заполните поле!'
+   
+   baggage = request.args.get('baggage')
+   
+   point = request.args.get('point')
+   if point == '':
+      errors['point'] = 'Заполните поле!'
+   
+   point2 = request.args.get('point2')
+   if point2 == '':
+      errors['point2'] = 'Заполните поле!'
+   
+   date = request.args.get('date')
+   
+   user = request.args.get('user')
+   if user == '':
+      errors['user'] = 'Заполните поле!'
+      
+   age = request.args.get('age')
+   
+   return render_template('ticket.html', user=user, age=age, errors=errors, place=place, type=type, name_1=name_1, name_2=name_2, baggage=baggage, point=point, point2=point2, date=date)
