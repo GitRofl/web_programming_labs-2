@@ -4,14 +4,15 @@
 
 {% block main %}
    <a href="/menu">Меню</a>
-   <h1></h1>
+   <h1>Главная страница</h1>
 
-   <div>Тема Лабораторной - Формы (POST). Список сделанных страниц:</div>
-   <ol>
-      <li><a href="/lab4/login">***</a></li>
-      <li><a href="/lab4/xolod">Холодильник</a></li>
-      <li><a href="/lab4/zerno">Заказ зерна</a></li>
-      <li><a href="/lab4/cookies">Куки</a></li>
-   </ol>
+   <ul>
+      <li><a href="">Просмотр заметок</a></li>
+      <li><a href="">Создание заметок</a></li>
+      <li><a href="">Логин</a></li>
+      <li><a href="">Регистрация</a></li>
+   </ul>
+
+   <p>Имя пользователя: {{ username }}</p>
 
 {% endblock %}

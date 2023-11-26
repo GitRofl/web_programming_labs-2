@@ -5,26 +5,23 @@ import psycopg2
 lab5 = Blueprint('lab5', __name__)
 
 
-@lab5.route("/lab5/")
-def main():
+def dbConnect():
    conn = psycopg2.connect(
       host = "127.0.0.1",
       database = "knowledge_base_for_artem",
       user = "artem_knowledge_base",
       password = "123")
-   
-   cur = conn.cursor()
-   
-   cur.execute("SELECT * FROM users;")
+   return conn;
 
-   result = cur.fetchall()
+def dbClose (cursor, connecttion):
+   cursor.close()
+   connecttion.close()
+
+@lab5.route("/lab5/")
+def main():
+   visibleUser = "Anon"
    
-   cur.close()
-   conn.close()
-   
-   print(result)
-   
-   return "go to console"
+   return render_template("lab5.html", username=visibleUser);
 
 @lab5.route("/lab5/users")
 def users():
@@ -45,4 +42,4 @@ def users():
     conn.close()
 
     
-    return render_template("users.html", users=result)
+    return render_template("users.html", users=result);
