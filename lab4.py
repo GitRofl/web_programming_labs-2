@@ -27,3 +27,34 @@ def login():
 @lab4.route('/lab4/success_2')
 def order():
     return render_template('login.html')
+ 
+ 
+@lab4.route('/lab4/xolod', methods = ['GET','POST'])
+def xolodil():
+    if request.method== 'GET':
+        return render_template('xolod.html')
+    temp = request.form.get('temp')
+    error= ''
+    if temp == '':
+       error = 'Не задана температура'
+    else:
+        if temp:
+            temp=int(temp)
+            if (temp> -13) and 0>temp:
+                if (temp> -13) and (-8>temp):
+                    snow=''
+                elif (temp>-9) and (-4>temp):
+                    snow = 'snow'
+                elif (temp>-5) and (0> temp):
+                    snow= 'snow'
+                return render_template('temp.html',temp=temp,snow=snow)
+            
+            if temp< -12:
+                error='не удалось установить температуру — слишком низкое значение'
+            if temp > -1:
+                error='не удалось установить температуру — слишком высокое значение'
+    return render_template('xolod.html', error=error, temp=temp)
+ 
+@lab4.route('/lab4/temp')
+def temper():
+    return render_template('temp.html')
