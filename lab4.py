@@ -98,3 +98,30 @@ def zerno():
 @lab4.route('/lab4/formazerna')
 def formazerna():
     return render_template('formazerna.html')
+ 
+ 
+
+@lab4.route('/lab4/cookies', methods=['GET', 'POST'])
+def cookies():
+    if request.method == 'GET':
+        return render_template('cookies.html')
+
+    color = request.form.get('color')
+    background = request.form.get('background')
+    text = request.form.get('text')
+
+    if color == request.cookies.get('background'):
+        return 'Цвет текста не должен совпадать с цветом фона'
+
+    try:
+        text_size = int(text)
+        if not (5 <= text_size <= 30):
+            return 'Размер текста должен быть от 5px до 30px'
+    except ValueError:
+        return 'Некорректный размер текста'
+
+    headers = {
+      'Set-Cookie': f'color={color}; background={background}; path=/',
+      'Location': '/lab4/cookies'
+    }
+    return '', 303, headers
