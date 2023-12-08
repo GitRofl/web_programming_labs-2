@@ -1,18 +1,21 @@
-{%extends "base.html" %}
+{% extends "base.html" %}
 
 {% block lab %}Лабораторная работа 5{% endblock %}
 
 {% block main %}
-   <a href="/menu">Меню</a>
-   <h1>Главная страница</h1>
 
-   <ul>
-      <li><a href="">Просмотр заметок</a></li>
-      <li><a href="">Создание заметок</a></li>
-      <li><a href="">Логин</a></li>
-      <li><a href="">Регистрация</a></li>
-   </ul>
+<div>
+        <h1>База знаний</h1>
+        <ol>
+         <li><a href="http://127.0.0.1:5000/lab5/view_article">Просмотреть заметки</a></li>
+         <li><a href="http://127.0.0.1:5000/lab5/new_article">Создать заметку</a></li>
+         <li><a href="http://127.0.0.1:5000/lab5/login">Логин</a></li>
+         <li><a href="http://127.0.0.1:5000/lab5/register">Регистрация</a></li>
+         </ol>
+        <p>{{username}}</p>
+    </div>
+{% endblock %}
 
-   <p>Имя пользователя: {{ username }}</p>
-
+{% block menu %}
+    <a href="http://127.0.0.1:5000/menu" target="_blank">Меню</a>
 {% endblock %}
