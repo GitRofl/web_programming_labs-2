@@ -11,6 +11,7 @@ from Db.models import users,articles
 from flask_login import LoginManager
 from lab7 import lab7
 from lab8 import lab8
+from lab9 import lab9
 
 app = Flask(__name__)
 
@@ -47,3 +48,4 @@ app.register_blueprint(lab5)
 app.register_blueprint(lab6)
 app.register_blueprint(lab7)
 app.register_blueprint(lab8)
+app.register_blueprint(lab9)
